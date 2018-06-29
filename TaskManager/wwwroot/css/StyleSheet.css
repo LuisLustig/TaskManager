@@ -1,0 +1,102 @@
+﻿body {
+}
+
+#foot {
+    border-bottom-style: solid;
+    border-bottom-color: wheat;
+    color: darkgray;
+    margin-bottom: 10px;
+    font-size: xx-small;
+    border-bottom: none;
+    border-bottom-style: none;
+}
+
+
+a {
+    color: darkgray;
+    font-size: large;
+    margin-left: -10px;
+    padding: 0;
+    text-decoration: none;
+}
+p {
+    font-family: Arial;
+    font-size: x-small;
+    font-style: oblique;
+    margin: 0;
+    padding: 3px;
+}
+h2 {
+    color: darkgray;
+    font-weight: 100;
+    font-family: Arial;
+    text-align: left;
+    font-size: medium;
+    padding: 3px;
+    margin: 0px;
+    font-style: oblique;
+}
+th {
+    border-style: none;
+    /*background-color: aliceblue;*/
+    margin: 0;
+    padding: 3px;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: dimgrey;
+}
+
+#tr0{
+  border-bottom-width:thin;
+    border-bottom-style:solid;
+    border-bottom-color:dimgrey;
+}
+
+#item_Id{
+    visibility: hidden;
+    width:0;
+}
+
+#tr1{
+    width:45px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 500px;
+    margin: 5px auto;
+    position: relative;
+    /*padding: 10px 10px 10px 45px;*/
+    line-height: 23px;
+    color: #6A5F49;
+    text-shadow: 0 1px 1px white;
+    font: 0.95em/23px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+    border: 1px solid #C3BAAA;
+    border-color: rgba(195, 186, 170, 0.9);
+    background-color: beige;
+}
+
+    table:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 40px;
+        width: 0px;
+        border: solid #ff0000;
+        /* IE 8 */
+        border-color: rgba(239, 207, 173, 0.9);
+        border-width: 0 1px;
+    }
+
+    table div {
+        background: url("{T_THEME_PATH}/images/quote.gif") no-repeat 0px 5px;
+    }
+
+    table.uncited {
+        padding-top: 10px;
+    }
+
+        table.uncited div {
+            padding-top: 23px;
+        }

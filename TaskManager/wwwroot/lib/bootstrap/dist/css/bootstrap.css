@@ -167,7 +167,7 @@ input[type="search"]::-webkit-search-decoration {
 fieldset {
   padding: .35em .625em .75em;
   margin: 0 2px;
-  border: 1px solid #c0c0c0;
+  /*border: 1px solid #c0c0c0;*/
 }
 legend {
   padding: 0;
@@ -214,7 +214,7 @@ th {
   }
   pre,
   blockquote {
-    border: 1px solid #999;
+    /*border: 1px solid #999;*/
 
     page-break-inside: avoid;
   }
@@ -253,11 +253,11 @@ th {
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    /*background-color: #fff !important;*/
   }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #ddd !important;
+    /*border: 1px solid #ddd !important;*/
   }
 }
 @font-face {

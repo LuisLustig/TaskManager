@@ -1,0 +1,79 @@
+﻿@model IEnumerable<TaskManager.Models.TableTasks>
+<environment include="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</environment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h2>I want to...</h2>
+    <p>
+        <a asp-action="Create">+</a>
+    </p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th id="tr1">
+                <p>
+                    <p><a asp-action="Create">+</a></p>
+                </p>
+            </th>
+            <th>
+                <h2>I want to...</h2>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="tr0">
+                <td id="tr1">
+                    @Html.EditorFor(modelItem => item.Id, new { disabled = "disabled" })
+
+                    @Html.EditorFor(modelItem => item.IsDone)
+                </td>
+                <td>
+                    @if (item.IsDone == true)
+                    {
+                        <p style=" text-decoration:line-through">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </p>
+                    }
+                    else
+                    {
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </p>
+                    }
+                </td>
+            </tr>
+        }
+        <tr>
+            <td id="tr1"></td>
+            <td id="foott">
+                <p id="foot">@Model.Count() task(s) remaining</p>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<script>
+    $('input[name="item.IsDone"]').change(function () {
+        if ($(this).is(':checked'))
+            $(this).parent().parent().children("td").children("p").css('text-decoration', 'line-through');
+
+        else $(this).parent().parent().children("td").children("p").css('text-decoration', 'none');
+
+        var id = $(this).parent().parent().children("td").children("input")[0].value;
+        // var name = $(this).parent().parent().children("td").children("p").text();
+        var isDone = $(this)[0].value;
+        // var person = { Id:id, Name: name, IsDone:isDone };
+        var person = {
+            Id: id,
+            IsDone: isDone
+        };
+        $.get("/TableTasks/Edit", person);
+    });
+</script>
