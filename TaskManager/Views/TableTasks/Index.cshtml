@@ -67,13 +67,11 @@
         else $(this).parent().parent().children("td").children("p").css('text-decoration', 'none');
 
         var id = $(this).parent().parent().children("td").children("input")[0].value;
-        // var name = $(this).parent().parent().children("td").children("p").text();
-        var isDone = $(this)[0].value;
-        // var person = { Id:id, Name: name, IsDone:isDone };
+        var isDone = $(this).is(':checked');
         var person = {
             Id: id,
             IsDone: isDone
         };
-        $.get("/TableTasks/Edit", person);
+        $.get("/TableTasks/Edit2", person, null, JSON);
     });
 </script>

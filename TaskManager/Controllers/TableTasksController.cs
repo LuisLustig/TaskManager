@@ -80,7 +80,7 @@ namespace TaskManager.Controllers
             return View(tableTasks);
         }
 
-        public async Task<IActionResult> Edit(int? id, bool? isDone)
+        public async Task<IActionResult> Edit2(int? id, bool isDone)
         {
 
             var tableTasks = await _context.TableTasks.SingleOrDefaultAsync(m => m.Id == id);
@@ -118,7 +118,39 @@ namespace TaskManager.Controllers
             }
             return View(tableTasks);
         }
+        //public async Task<IActionResult> Edit( string isDone)
+        //{
 
+        //    var tableTasks = await _context.TableTasks.SingleOrDefaultAsync(m => m.IsDone == Convert.ToBoolean(isDone));
+        //    if (tableTasks == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    tableTasks.IsDone = Convert.ToBoolean( isDone);
+        //    //return View(tableTasks);
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(tableTasks);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!TableTasksExists(tableTasks.Id))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(tableTasks);
+        //}
         // POST: TableTasks/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
